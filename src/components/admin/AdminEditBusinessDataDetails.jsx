@@ -10,15 +10,15 @@ import InputWithDesc from '../InputWithDesc';
 import BusinessDataStore from '../../stores/businessDataStore';
 
 const AdminEditBusinessDataDetails = observer((props) => {
-    const [business, setBusiness] = useState({});
+    // const [business, setBusiness] = useState({});
 
-    useEffect(() => {
-        const fetchData = async () => {
-            await BusinessDataStore.getBusinessData();
-            setBusiness(BusinessDataStore.business);
-        }
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         // await BusinessDataStore.getBusinessData();
+    //         // setBusiness(BusinessDataStore.business);
+    //     }
+    //     fetchData();
+    // }, []);
 
     const handleSaveBtnClick = async (e) => {
         let saveResponse = await BusinessDataStore.postBusinessData(

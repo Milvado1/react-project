@@ -4,12 +4,12 @@ import { toJS } from 'mobx';
 
 class BusinessDataStore {
     business = {
-        name: "מלי גרוסמןןן",
-        address: "אדוניהו הכהן ירושלים",
+        name: "משה כהן",
+        address: "האורן 5 ירושלים",
         phone: "052-7123456",
-        owner: "מלי גרוסמן",
-        logo: "https://coding-academy.org/images/ca_logo.png",
-        description: "מלי גרוסמן - יועצת ומנטורית אישית. מלווה זוגות, הורים ואנשים פרטיים עד לרוגע המיוחל",
+        owner: "משה כהן",
+        logo: "images/logo.png",
+        description: "משה כהן - שרותי ייעוץ",
     };
 
     constructor() {
@@ -21,13 +21,13 @@ class BusinessDataStore {
             }
         )
         
-        this.postBusinessData(
-            this.business.name,
-            this.business.description,
-            this.business.address,
-            this.business.email,
-            this.business.phone
-        );
+        // this.postBusinessData(
+        //     this.business.name,
+        //     this.business.description,
+        //     this.business.address,
+        //     this.business.email,
+        //     this.business.phone
+        // );
     }
 
     postBusinessData = async (name, description, address, email, phone) => {
@@ -56,7 +56,7 @@ class BusinessDataStore {
             this.business = toJS(this.businessData);
         })
 
-        return this.business; // ??
+        // return this.business; // ??
     }
 }
 

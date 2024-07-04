@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet, useNavigate, Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import Box from '@mui/material/Box';
@@ -28,13 +28,9 @@ const AdminMain = observer(() => {
                 <Button variant="contained" color="primary" onClick={() => { navigate('./meetings') }}>
                     פגישות
                 </Button>
-                {/* <div className='button-container'>
-                    <Button variant="outlined" ><Link to="./services">services</Link></Button>
-                    <Button variant="outlined" ><Link to="./meeting">meeting</Link></Button>
-                </div> */}
-                <hr></hr>
-                <Outlet />
-                <hr></hr>
+                <Box sx={{ marginTop: 2 }}>
+                    <Outlet />
+                </Box>
             </Box>
         </>
     );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
+// import { useKeyDown } from 'react-use-keydown';
 import Swal from 'sweetalert2';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
@@ -34,10 +35,14 @@ const AdminLogin = observer(() => {
         fetchData();
     }, [name, password]);
 
-    const handleLoginBtnClick = async (e) => {
+    const handleLoginOK = async (e) => {
         setName(document.getElementById("username").value);
         setPassword(document.getElementById("password").value);
     }
+
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") handleLoginOK();
+    };
 
     return (
         <>
@@ -63,10 +68,14 @@ const AdminLogin = observer(() => {
                             id="password"
                             type="password"
                             label=" סיסמה "
+                            onKeyDown={handleKeyDown}
                         />
                     </FormControl >
                     <br></br>
-                    <Button variant="contained" color="primary" onClick={handleLoginBtnClick}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={handleLoginOK}>
                         Login
                     </Button>
                 </Stack>

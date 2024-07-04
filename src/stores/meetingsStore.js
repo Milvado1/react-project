@@ -23,6 +23,7 @@ class MeetingsStore {
     }
 
     addMeeting = async (serviceType, clientName, clientPhone, clientEmail, dateTime) => {
+        console.log(2, dateTime);
         let newMeeting = {};
         newMeeting.id = this.meetings.length;
         newMeeting.serviceType = serviceType;
@@ -36,6 +37,7 @@ class MeetingsStore {
             body: JSON.stringify(newMeeting),
             headers: { "Content-Type": "application/json" }
         });
+        console.log("response.text:", response.statusText);
         if (response.status === 200) {
             this.meetings = [...this.meetings, newMeeting];
         }
